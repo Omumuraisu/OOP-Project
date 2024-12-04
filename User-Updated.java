@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-// Abstract class for User Types
 abstract class UserType {
     protected String userName;
 
@@ -11,7 +10,7 @@ abstract class UserType {
     public abstract void displayTypeDetails();
 }
 
-// Facilitator 
+// Facilitator
 class Facilitator extends UserType {
     public Facilitator() {
         super("Facilitator");
@@ -23,7 +22,7 @@ class Facilitator extends UserType {
     }
 }
 
-// Donor 
+// Donor
 class Donor extends UserType {
     public Donor() {
         super("Donor");
@@ -35,7 +34,7 @@ class Donor extends UserType {
     }
 }
 
-// Volunteer 
+// Volunteer
 class Volunteer extends UserType {
     public Volunteer() {
         super("Volunteer");
@@ -73,21 +72,50 @@ class LoginUser {
     }
 }
 
-// Sign Up Subclass
-class SignUp extends LoginUser {
+// SignUp Class 
+class SignUp {
+    private String userName;
+    private String firstName;
+    private String lastName;
+    private String userPassword;
     private String userContact;
+    private UserType userType;
 
-    public SignUp(String userName, String userPassword, String userContact, UserType userType) {
-        this.setLogin(userName, userPassword, userType);
+    public SignUp(String userName, String userPassword, String firstName, String lastName, String userContact, UserType userType) {
+        this.userName = userName;
+        this.userPassword = userPassword;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.userContact = userContact;
+        this.userType = userType;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public String getFullName() {
+        return firstName + " " + lastName;
     }
 
     public String getContact() {
         return userContact;
     }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void displaySignUpDetails() {
+        System.out.println("\nSign-Up Successful!");
+        System.out.println("Username: " + getUserName());
+        System.out.println("Full Name: " + getFullName());
+        System.out.println("Contact Number: " + getContact());
+        getUserType().displayTypeDetails();
+    }
 }
 
-// Main class for interaction
+// Main class
 public class User {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
@@ -97,14 +125,15 @@ public class User {
         System.out.println(" ");
         System.out.print("Enter your choice: ");
         int option = userInput.nextInt();
+        userInput.nextLine(); 
 
         switch (option) {
             case 1:
                 System.out.print("Enter Username: ");
-                String loginName = userInput.next();
+                String loginName = userInput.nextLine();
 
                 System.out.print("Enter Password: ");
-                String loginPass = userInput.next();
+                String loginPass = userInput.nextLine();
 
                 UserType loginType = selectType(userInput);
                 if (loginType == null) break;
@@ -118,15 +147,21 @@ public class User {
 
             case 2:
                 System.out.print("Create a Username: ");
-                String signUpName = userInput.next();
+                String signUpName = userInput.nextLine();
 
                 System.out.print("Create a Password: ");
-                String signUpPass = userInput.next();
+                String signUpPass = userInput.nextLine();
+
+                System.out.print("Enter First Name: ");
+                String firstName = userInput.nextLine();
+
+                System.out.print("Enter Last Name: ");
+                String lastName = userInput.nextLine();
 
                 String contact;
                 while (true) {
                     System.out.print("Enter your Contact Number (11 digits): ");
-                    contact = userInput.next();
+                    contact = userInput.nextLine();
 
                     if (contact.matches("\\d{11}")) {
                         break;
@@ -138,12 +173,8 @@ public class User {
                 UserType signUpType = selectType(userInput);
                 if (signUpType == null) break;
 
-                SignUp signUpUser = new SignUp(signUpName, signUpPass, contact, signUpType);
-
-                System.out.println("\nSign-Up Successful!");
-                System.out.println("Username: " + signUpUser.getUsername());
-                signUpUser.getType().displayTypeDetails();
-                System.out.println("Contact Number: " + signUpUser.getContact());
+                SignUp signUpUser = new SignUp(signUpName, signUpPass, firstName, lastName, contact, signUpType);
+                signUpUser.displaySignUpDetails();
                 break;
 
             default:
@@ -161,6 +192,7 @@ public class User {
         System.out.println("3. Volunteer");
         System.out.print("Enter your type (1/2/3): ");
         int typeChoice = userInput.nextInt();
+        userInput.nextLine(); 
 
         switch (typeChoice) {
             case 1:
