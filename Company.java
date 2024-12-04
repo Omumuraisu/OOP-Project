@@ -2,22 +2,22 @@ import java.util.Scanner;
 
 class Company {
     private String companyName;
-    private String email;
+    private String companyEmail;
     private String companyAddress;
-    private int number;
+    private int companyNumber;
 
-    public void setCompany(String companyName, String email, String companyAddress, int number) {
+    public void setCompany(String companyName, String companyEmail, String companyAddress, int companyNumber) {
         this.companyName = companyName;
-        this.email = email;
+        this.email = companyEmail;
         this.companyAddress = companyAddress;
-        this.number = number;
+        this.number = companyNumber;
     }
 
     public String getCompanyName() {
         return companyName;
     }
 
-    public String getEmail() {
+    public String getCompanyEmail() {
         return email;
     }
 
@@ -25,15 +25,15 @@ class Company {
         return companyAddress;
     }
 
-    public int getNumber() {
+    public int getCompanyNumber() {
         return number;
     }
 
     public void displayCompanyInfo() {
         System.out.println("Company Name: " + companyName);
-        System.out.println("Company Email: " + email);
+        System.out.println("Company Email: " + companyEmail);
         System.out.println("Company Address: " + companyAddress);
-        System.out.println("Company Contact Number: " + number);
+        System.out.println("Company Contact Number: " + companyNumber);
     }
 }
 
