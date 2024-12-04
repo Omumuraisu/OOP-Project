@@ -74,7 +74,7 @@ class Facilitator{
 
     public void displayDisasterDetails(){
         
-        System.out.println("/n======================================================================");
+        System.out.println("\n======================================================================");
         System.out.println("         Location              Disaster             Population Size     ");
         System.out.println("========================================================================");
 
