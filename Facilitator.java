@@ -76,7 +76,7 @@ class Facilitator{
         
         System.out.println("\n======================================================================");
         System.out.println("         Location              Disaster             Population Size     ");
-        System.out.println("========================================================================");
+        System.out.println("======================================================================");
 
         for(int i = 0; i < location.length; i++){
             System.out.println("         " +location[i] + "              " + disasterType[i] + "             " + popSize[i] + "     " );
@@ -84,6 +84,24 @@ class Facilitator{
         
     }
 
+    public void displayInventories(int food, int water, int medicalSupplies, int clothing){
+        System.out.println(" ");
+        System.out.println("\n=======================================================================================================================================================");
+        System.out.println("                                                       RELIEF GOODS SUPPLIES                                ");
+        System.out.println("=======================================================================================================================================================");
+        System.out.println("Range of Size            Citizens Affected             Foods             Water             Medical Supplies             Clothing             Status");
+        System.out.println("=======================================================================================================================================================");
+        System.out.println(" ");
+
+        for(int i = 0; i < popSize.length; i++){
+            if  (10 < popSize[i] && popSize[i] < 20){
+                System.out.println("10-20" + "             "+ popSize[i] + "             " + food + "             " + water + "             " + medicalSupplies + "             " + clothing + "             " + "Sufficient");
+            } else {
+                System.out.println("10-20" + "             "+ popSize[i] + "             " + food + "             " + water + "             " + medicalSupplies + "             " + clothing + "             " + "Insufficient");
+            }
+
+        }
+    }
 }
 
 public class Run{
@@ -92,33 +110,7 @@ public class Run{
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
 
-        System.out.println("Hello, " + //Facilitator Name);
-        System.out.print("Enter your PIN: ");
-        int pin = scanner.nextInt();
-
-        System.out.println(" ");
-        System.out.println("\n==============================================================================================");
-        System.out.println("                                           TRANSACTION                                ");
-        System.out.println("==============================================================================================");
-        System.out.println(" ");
-        System.out.println("          |===== 1. Check Balance =====|                 |===== 2. Withdraw Cash =====|");
-        System.out.println(" ");
-
-        System.out.print("Enter your choice:");
-        int choice = scanner.nextInt();
-
-        if(choice == 1){
-            System.out.println(" ");
-            System.out.println("Your current balance is: " + //ang method I think ni T-T);
-            System.out.println(" ");    
-        }        
-        else if(choice == 2){
-            System.out.println(" ");
-            System.out.print("Enter the amount you want to withdraw: ");
-            facilitator.setCashWithdrawal(scanner.nextDouble());
-            System.out.println(" ");
-        }
-
+      
     }
 
     
