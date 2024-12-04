@@ -109,7 +109,25 @@ class SignUp extends LoginUser {
         System.out.println("Enter username: " + createUserName);
         System.out.println("Enter password: " + createPassword);
     }
+
+    public boolean verifyUser() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Confirm your password: ");
+        String confirmPassword = scan.next();
+        
+        // Check if passwords match
+        if (createPassword.equals(confirmPassword)) {
+            System.out.println("Password confirmed. Verification successful.");
+            return true;
+        } else {
+            System.out.println("Passwords do not match. Please try again.");
+            return false;
+        }
+    }
 }
+
+
+
 
 public class main2 {
     public static void main(String[] args) {
@@ -150,24 +168,25 @@ public class main2 {
                 System.out.println("=========================");
                 System.out.println("Username " + userName);
                 System.out.println("Password " + password);
+                System.out.println("=========================");
 
 
-                System.out.println("|===== 1.Facilitator |=====| 2. Donor |===== 3.Volunteer");
+                System.out.println("|===== 1.Facilitator |=====| 2. Donor |===== 3.Volunteer======");
                 int choose = scan.nextInt();
                 
                 switch (choose) {
                     case 1: 
-                        System.out.println("***************");
+                        System.out.println("Facilitator");
                         // Implement logic for Facilitator here
                         break;
 
                     case 2: 
-                        System.out.println("***************");
+                        System.out.println("Donor ");
                         // Implement logic for Donor here
                         break;
 
                     case 3:
-                        System.out.println("***************");
+                        System.out.println("Volunteer");
                         // Implement logic for Volunteer here
                         break;
 
@@ -177,33 +196,41 @@ public class main2 {
                 break;
 
             case 2:
+           
                 // SignUp process
+                System.out.println("=========================");
                 System.out.println("Enter username for SignUp: ");
                 String createUserName = scan.next();
                 System.out.println("Enter password for SignUp: ");
                 String createPassword = scan.next();
-
+                System.out.println("=========================");
                 SignUp signUp = new SignUp(createUserName, createPassword);
                 signUp.displayLogin();
                 signUp.login();
+                System.out.println("=========================");
 
+                boolean isVerified = false;
+                while (!isVerified) {
+                    isVerified = signUp.verifyUser();  // Verification loop
+                }
+                System.out.println("=========================");
                 
-                System.out.println("|===== 1.Facilitator |=====| 2. Donor |===== 3.Volunteer");
+                System.out.println("|===== 1.Facilitator |=====| 2. Donor |===== 3.Volunteer=======");
                 int choose2 = scan.nextInt();
 
                 switch (choose2) {
                     case 1: 
-                        System.out.println("***************");
+                        System.out.println("Facilitator");
                         // Implement logic for Facilitator here
                         break;
 
                     case 2: 
-                        System.out.println("***************");
+                        System.out.println("Donor");
                         // Implement logic for Donor here
                         break;
 
                     case 3:
-                        System.out.println("***************");
+                        System.out.println("Volunteer");
                         // Implement logic for Volunteer here
                         break;
 
