@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-// Abstract class for User Roles
 abstract class UserRole {
     protected String roleName;
 
@@ -87,7 +86,7 @@ class SignUp extends LoginUser {
     }
 }
 
-// Main class for interaction
+// Main class 
 public class User {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
