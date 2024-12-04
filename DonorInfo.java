@@ -3,17 +3,18 @@ import java.util.Scanner;
 class Donor {
     private int transactionChoice;
     private String donorName;
-    private String donationType;
-    private String donorEmail;
-    private String donorContact;
     private String donorAddress;
+    private String donorContact;
+    private String donorEmail;
+    private String donationType;
     private String accountName;
     private int accountNumber;
+    private int cashDonationAmount;
     private String[] inKindSupportItems = new String[5];  
     private int[] inKindSupportQuantities = new int[5];     
-    private int cashDonationAmount;
+    
 
-    public void setCompanyDetails(int transactionChoice, String donorName, String donationType, String accountName, int accountNumber, int cashDonationAmount) {
+    public void setUserDetails(int transactionChoice, String donorName, String donationType, String accountName, int accountNumber, int cashDonationAmount) {
         this.transactionChoice = transactionChoice;
         this.donorName = donorName;
         this.donationType = donationType;
@@ -215,7 +216,7 @@ public class DonorInfo {
                 }
 
                 donor.setDonorDetails(donorName, donorAddress, donorContact, donorEmail);
-                donor.setCompanyDetails(transactionChoice, donorName, donationType, "N/A", 0, 0);
+                donor.setUserDetails(transactionChoice, donorName, donationType, "N/A", 0, 0);
                 donor.donationProcess();
                 break;
             }
@@ -274,7 +275,7 @@ public class DonorInfo {
         
 
             donor.setDonorDetails(donorName, donorAddress, donorContact, donorEmail);
-            donor.setCompanyDetails(transactionChoice, donorName, donationType, accountName, accountNumber, cashDonationAmount);
+            donor.setUserDetails(transactionChoice, donorName, donationType, accountName, accountNumber, cashDonationAmount);
             donor.donationProcess();
             break;
         }
