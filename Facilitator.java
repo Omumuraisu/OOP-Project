@@ -28,48 +28,23 @@ class Facilitator{
         return facilitatorName;
     }
 
-    public void setFacilitatorName(String facilitatorName) {
-        this.facilitatorName = facilitatorName;
-    }
-
     public int getPin() {
         return pin;
-    }
-
-    public void setPin(int pin) {
-        this.pin = pin;
     }
 
     public String[] getLocation() {
         return location;
     }
 
-    public void setLocation(String[] location) {
-        this.location = location;
-    }
-
     public String[] getDisasterType() {
         return disasterType;
-    }
-
-    public void setDisasterType(String[] disasterType) {
-        this.disasterType = disasterType;
     }
 
     public int[] getPopSize() {
         return popSize;
     }
-
-    public void setPopSize(int[] popSize) {
-        this.popSize = popSize;
-    }
-
     public double getDonatedCash() {
         return donatedCash;
-    }
-
-    public void setDonatedCash(double donatedCash) {
-        this.donatedCash = donatedCash;
     }
 
     public void displayDisasterDetails(){
@@ -78,7 +53,7 @@ class Facilitator{
         System.out.println("         Location              Disaster             Population Size     ");
         System.out.println("======================================================================");
 
-        for(int i = 0; i < location.length; i++){
+        for(int i = 0; i < location.length && i < disasterType.length && i < popSize.length; i++){
             System.out.println("         " +location[i] + "              " + disasterType[i] + "             " + popSize[i] + "     " );
         }
         
@@ -93,6 +68,7 @@ class Facilitator{
         System.out.println("=======================================================================================================================================================");
         System.out.println(" ");
 
+        //idk how ma compare sa range to affected pero daw somthing like this ang na isip ko
         for(int i = 0; i < popSize.length; i++){
             if  (10 < popSize[i] && popSize[i] < 20){
                 System.out.println("10-20" + "             "+ popSize[i] + "             " + food + "             " + water + "             " + medicalSupplies + "             " + clothing + "             " + "Sufficient");
@@ -102,6 +78,22 @@ class Facilitator{
 
         }
     }
+
+    public void processTransactions(){
+        
+    }
+
+    public void displayVolunteers(){
+       
+    }
+
+    public void displayDonors(){
+        
+    }
+
+    public void displayFaciSummary(){
+
+    }
 }
 
 public class Run{
@@ -109,6 +101,8 @@ public class Run{
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner (System.in);
+
+        
 
       
     }
