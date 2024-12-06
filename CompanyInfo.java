@@ -4,10 +4,10 @@ class Company {
     private String companyName;
     private String companyEmail;
     private String companyAddress;
-    private int companyNumber;
+    private String companyNumber; // Change to String for validation
 
-    //Constructors
-    public void setCompanyDetails(String companyName, String companyEmail, String companyAddress, int companyNumber) {
+    // Constructor
+    public void setCompanyDetails(String companyName, String companyEmail, String companyAddress, String companyNumber) {
         this.companyName = companyName;
         this.companyEmail = companyEmail;
         this.companyAddress = companyAddress;
@@ -27,7 +27,7 @@ class Company {
         return companyAddress;
     }
 
-    public int getCompanyNumber() {
+    public String getCompanyNumber() {
         return companyNumber;
     }
 
@@ -58,12 +58,24 @@ public class CompanyInfo {
         System.out.print("Enter Company Address: ");
         String companyAddress = scanner.nextLine();
 
-        System.out.print("Enter Company Contact Number: ");
-        int companyNumber = scanner.nextInt();
-        System.out.println("\n==============================================================================");
+        // Contact number validation loop
+        String companyNumber = "";
+        while (true) {
+            System.out.print("Enter your Contact Number (11 digits): ");
+            companyNumber = scanner.nextLine();
 
-        // Display Info
+            if (companyNumber.matches("\\d{11}")) {
+                break;
+            } else {
+                System.out.println("Invalid contact number. Please enter exactly 11 digits.");
+            }
+        }
+        
+        System.out.println("\n==============================================================================");
+        
         company.setCompanyDetails(companyName, companyEmail, companyAddress, companyNumber);
+
+        // Display company info
         company.displayCompanyInfo();
 
         scanner.close();
