@@ -8,7 +8,7 @@ class Donor {
     private String donorEmail;
     private String donationType;
     private String accountName;
-    private String accountNumber;  // Changed to String to handle input validation easily
+    private String accountNumber;  
     private int cashDonationAmount;
     private String[] inKindSupportItems = new String[5];  
     private int[] inKindSupportQuantities = new int[5];     
