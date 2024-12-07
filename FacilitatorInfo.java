@@ -68,7 +68,6 @@ class Facilitator{
         System.out.println("=======================================================================================================================================================");
         System.out.println(" ");
 
-        //idk how ma compare sa range to affected pero daw somthing like this ang na isip ko
         for(int i = 0; i < popSize.length; i++){
             if  (10 < popSize[i] && popSize[i] < 20){
                 System.out.println("10-20" + "             "+ popSize[i] + "             " + food + "             " + water + "             " + medicalSupplies + "             " + clothing + "             " + "Sufficient");
@@ -97,7 +96,7 @@ class Facilitator{
     }
 }
 
-public class Run{
+public class FacilitatorInfo{
     
 
     public static void main(String[] args) {

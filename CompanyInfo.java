@@ -4,7 +4,11 @@ class Company {
     private String companyName;
     private String companyEmail;
     private String companyAddress;
+<<<<<<< Updated upstream
     private String companyNumber; // Change to String for validation
+=======
+    private String companyNumber;
+>>>>>>> Stashed changes
 
     // Constructor
     public void setCompanyDetails(String companyName, String companyEmail, String companyAddress, String companyNumber) {
@@ -31,7 +35,6 @@ class Company {
         return companyNumber;
     }
 
-    // Display Method
     public void displayCompanyInfo() {
         System.out.println("\n==============================================================================");
         System.out.println("                           WELCOME TO " + companyName.toUpperCase());
@@ -58,7 +61,11 @@ public class CompanyInfo {
         System.out.print("Enter Company Address: ");
         String companyAddress = scanner.nextLine();
 
+<<<<<<< Updated upstream
         // Contact number validation loop
+=======
+        
+>>>>>>> Stashed changes
         String companyNumber = "";
         while (true) {
             System.out.print("Enter your Contact Number (11 digits): ");

@@ -8,7 +8,11 @@ class Donor {
     private String donorEmail;
     private String donationType;
     private String accountName;
+<<<<<<< Updated upstream
     private String accountNumber;  
+=======
+    private String accountNumber;  // Changed to String to handle input validation easily
+>>>>>>> Stashed changes
     private int cashDonationAmount;
     private String[] inKindSupportItems = new String[5];  
     private int[] inKindSupportQuantities = new int[5];     
@@ -220,7 +224,11 @@ public class DonorInfo {
                 break;
             }
 
+<<<<<<< Updated upstream
             // For Cash Donation
+=======
+            
+>>>>>>> Stashed changes
             System.out.println("");
             System.out.println("==============================================================================");
             System.out.println("                   MAKE A DIFFERENCE TODAY!                    ");
